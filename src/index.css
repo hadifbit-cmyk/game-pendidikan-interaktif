@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', system-ui, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: var(--font-body);
+    background-color: #070b14;
+    color: #f1f5f9;
+    touch-action: none;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes cardPopIn {
+  0% { opacity: 0; transform: translateY(18px) scale(0.92); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes cardAcquireEnter {
+  0% { opacity: 0; transform: translateY(24px) scale(0.76); }
+  55% { opacity: 1; transform: translateY(-4px) scale(1.04); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes cardAcquireExit {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-16px) scale(0.9); }
+}
+
+@keyframes itemBuyPop {
+  0% { opacity: 0; transform: translateX(-10px) scale(0.94); }
+  45% { opacity: 1; transform: translateX(0) scale(1.03); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes criticalHpFlash {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.38); }
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0.2; }
+}
+
+.animate-float-slow {
+  animation: floatSlow 3.6s ease-in-out infinite;
+}
+
+.animate-card-pop {
+  animation: cardPopIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-card-acquire-in {
+  animation: cardAcquireEnter 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-card-acquire-out {
+  animation: cardAcquireExit 0.34s ease-in forwards;
+}
+
+.animate-item-buy {
+  animation: itemBuyPop 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-critical-hp {
+  animation: criticalHpFlash 0.75s ease-in-out infinite;
+}
+
+/* Custom thin scrollbar for modals */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.35);
+  border-radius: 3px;
+}

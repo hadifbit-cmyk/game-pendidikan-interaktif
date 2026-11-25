@@ -1,0 +1,6 @@
+{
+  "name": "Adjektif Legends: Dawn Realm Survival",
+  "description": "Permainan pengembaraan survival MOBA 3D pendidikan Bahasa Melayu Tahun 3 untuk menguasai Kata Adjektif Jarak, Perasaan dan Pancaindera.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
